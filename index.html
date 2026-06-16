@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>溝通建模大師 OS | Communication Master OS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="rail">
+      <div class="brand-lockup">
+        <div class="mark">CM</div>
+        <div>
+          <p class="eyebrow">Communication Master OS</p>
+          <h1>溝通建模大師 OS <span class="en-inline">Communication Master OS</span></h1>
+        </div>
+      </div>
+
+      <nav class="nav-list" aria-label="核心模組">
+        <button class="nav-item active" data-view="dashboard"><i data-lucide="layout-dashboard"></i><span>今日總控台<small>Daily Command Center</small></span></button>
+        <button class="nav-item" data-view="scanner"><i data-lucide="scan-line"></i><span>溝通診斷器<small>Communication Scanner</small></span></button>
+        <button class="nav-item" data-view="translator"><i data-lucide="languages"></i><span>抱怨翻譯器<small>Complaint Translator</small></span></button>
+        <button class="nav-item" data-view="decoder"><i data-lucide="network"></i><span>衝突解碼器<small>Conflict Decoder</small></span></button>
+        <button class="nav-item" data-view="rewriter"><i data-lucide="sparkles"></i><span>高共鳴重寫器<small>Resonance Rewriter</small></span></button>
+        <button class="nav-item" data-view="trust"><i data-lucide="shield-check"></i><span>信任工程<small>Trust Builder</small></span></button>
+        <button class="nav-item" data-view="coach"><i data-lucide="brain-circuit"></i><span>AI 建模教練<small>AI Model Coach</small></span></button>
+      </nav>
+
+      <section class="progress-panel">
+        <div class="panel-title">
+          <span>能力樹 <small>Skill Tree</small></span>
+          <strong id="masterScore">Lv 37</strong>
+        </div>
+        <div id="skillTree" class="skill-tree"></div>
+      </section>
+    </aside>
+
+    <main class="workspace">
+      <section class="hero-band">
+        <div class="hero-copy">
+          <p class="eyebrow">從會說話，到會改變世界 | From speaking well to changing the world</p>
+          <h2>把「表達者」訓練成「建模者、引導者、領導者」。<span>Train speakers into modelers, guides, and leaders.</span></h2>
+          <p>不是閱讀溝通知識，而是每天透過情境、選擇、回饋與升級，練出傾聽、提問、同理、需求辨識、信任建立、共識形成、引導、影響、領導與建模能力。<br><small>Not a reading course, but a daily practice system for listening, questioning, empathy, needs scanning, trust, consensus, guidance, influence, leadership, and modeling.</small></p>
+        </div>
+        <div class="loop-meter" aria-label="訓練循環">
+          <div><strong>知道</strong><span>Know / Find the block</span></div>
+          <i data-lucide="arrow-right"></i>
+          <div><strong>練習</strong><span>Practice / Scenario response</span></div>
+          <i data-lucide="arrow-right"></i>
+          <div><strong>回饋</strong><span>Feedback / Model analysis</span></div>
+          <i data-lucide="arrow-right"></i>
+          <div><strong>升級</strong><span>Level up / Skill growth</span></div>
+        </div>
+      </section>
+
+      <section id="dashboard" class="view active">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Daily Training</p>
+            <h3>今日訓練任務 <span>Daily Training Missions</span></h3>
+          </div>
+          <div class="streak-pill"><i data-lucide="flame"></i><span>連續訓練 12 天 <small>12-day streak</small></span></div>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="training-card primary">
+            <div class="card-kicker">Listen OS</div>
+            <h4>傾聽力訓練中心 <span>Listening Training Center</span></h4>
+            <p class="scenario">老婆說：「你都不關心我。」你第一反應是？<br><small>Your spouse says, "You never care about me." What is your first response?</small></p>
+            <div class="choice-grid" data-quiz="listen"></div>
+            <div class="feedback" id="listenFeedback"></div>
+          </article>
+
+          <article class="training-card">
+            <div class="card-kicker">Question OS</div>
+            <h4>提問力訓練中心 <span>Questioning Training Center</span></h4>
+            <p class="scenario">學生不讀書，最好的問題是？<br><small>A student refuses to study. What is the best question?</small></p>
+            <div class="choice-grid" data-quiz="question"></div>
+            <div class="feedback" id="questionFeedback"></div>
+          </article>
+
+          <article class="training-card">
+            <div class="card-kicker">Empathy OS</div>
+            <h4>同理力訓練中心 <span>Empathy Training Center</span></h4>
+            <p class="scenario">員工說：「我不想做。」背後可能是？<br><small>An employee says, "I do not want to do it." What might be behind it?</small></p>
+            <div class="choice-grid" data-quiz="empathy"></div>
+            <div class="feedback" id="empathyFeedback"></div>
+          </article>
+
+          <article class="training-card">
+            <div class="card-kicker">Consensus OS</div>
+            <h4>共識形成中心 <span>Consensus Center</span></h4>
+            <p class="scenario">孩子想打電動，父母想讀書，共同目標是？<br><small>The child wants games; parents want study. What is the shared goal?</small></p>
+            <div class="choice-grid" data-quiz="consensus"></div>
+            <div class="feedback" id="consensusFeedback"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="scanner" class="view">
+        <div class="tool-layout">
+          <div class="tool-pane">
+            <p class="eyebrow">Communication Scanner</p>
+            <h3>今天的溝通問題是？ <span>What is today's communication issue?</span></h3>
+            <div class="option-stack" id="problemOptions"></div>
+          </div>
+          <div class="output-pane">
+            <div class="output-label">APP 判斷 | App Diagnosis</div>
+            <h4 id="scannerTitle">選一個情境，找出卡住的層級 | Choose a scenario to locate the blocked layer</h4>
+            <div id="scannerLayers" class="layer-grid"></div>
+            <p id="scannerAdvice" class="insight-text">真正的溝通診斷，不是判斷誰對誰錯，而是判斷系統卡在哪裡。<br><small>Real communication diagnosis is not about who is right, but where the system is stuck.</small></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="translator" class="view">
+        <div class="tool-layout">
+          <div class="tool-pane">
+            <p class="eyebrow">Complaint Translator</p>
+            <h3>抱怨翻譯器 <span>Complaint Translator</span></h3>
+            <div class="option-stack" id="complaintOptions"></div>
+          </div>
+          <div class="output-pane translator-output">
+            <div class="output-label">抱怨 → 需求 | Complaint → Need</div>
+            <h4 id="complaintText">你都不關心我 | You never care about me</h4>
+            <i data-lucide="arrow-down"></i>
+            <strong id="needText">我需要陪伴與被重視 | I need companionship and to feel valued</strong>
+            <p id="requestText">可執行請求：今晚能不能給我 20 分鐘，只聽我說最近的感受？<br><small>Actionable request: Could you give me 20 minutes tonight and just listen to how I have been feeling?</small></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="decoder" class="view">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Conflict Decoder</p>
+            <h3>衝突根源地圖 <span>Conflict Root Map</span></h3>
+          </div>
+        </div>
+        <div class="conflict-map">
+          <button data-conflict="資訊差異">資訊不同<br><small>Information gap</small></button>
+          <button data-conflict="經驗差異">經驗不同<br><small>Experience gap</small></button>
+          <button data-conflict="認知差異">模型不同<br><small>Model gap</small></button>
+          <button data-conflict="價值差異">意見不同<br><small>Value gap</small></button>
+          <button data-conflict="目標差異">衝突<br><small>Conflict</small></button>
+        </div>
+        <div class="model-engine">
+          <div class="output-label">六大建模引擎 | Six Model Engines</div>
+          <div id="modelEngine" class="engine-grid"></div>
+        </div>
+      </section>
+
+      <section id="rewriter" class="view">
+        <div class="tool-layout">
+          <div class="tool-pane">
+            <p class="eyebrow">Resonance Rewriter</p>
+            <h3>低共鳴 → 高共鳴 <span>Low Resonance → High Resonance</span></h3>
+            <textarea id="rewriteInput" placeholder="輸入一句低共鳴說法，例如：不要玩手機 | Enter a low-resonance phrase, e.g. Do not play with your phone">不要玩手機</textarea>
+            <button class="action-button" id="rewriteBtn"><i data-lucide="wand-sparkles"></i><span>產生高共鳴版本 <small>Generate high-resonance version</small></span></button>
+          </div>
+          <div class="output-pane">
+            <div class="output-label">APP 改寫 | App Rewrite</div>
+            <h4 id="rewriteOutput">你有沒有發現，手機可能正在偷走你的夢想？<br><span>Have you noticed that your phone may be stealing your dreams?</span></h4>
+            <p id="rewriteReason" class="insight-text">把命令改成身份與未來感，對方比較容易從防衛進入思考。<br><small>Turn commands into identity and future-oriented reflection so the other person can think instead of defend.</small></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="trust" class="view">
+        <div class="tool-layout">
+          <div class="tool-pane">
+            <p class="eyebrow">Trust Builder</p>
+            <h3>今天做到幾項？ <span>How many did you practice today?</span></h3>
+            <div class="check-list" id="trustChecks"></div>
+          </div>
+          <div class="output-pane">
+            <div class="output-label">信任指數 | Trust Index</div>
+            <div class="trust-score"><span id="trustScore">0</span><small>/100</small></div>
+            <div class="meter"><span id="trustBar"></span></div>
+            <p id="trustAdvice" class="insight-text">信任不是說服出來的，是被對方感受到「你先理解我」後自然生成的。<br><small>Trust is not persuaded into existence; it grows when the other person feels understood first.</small></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="coach" class="view">
+        <div class="tool-layout coach-layout">
+          <div class="tool-pane">
+            <p class="eyebrow">AI Model Coach</p>
+            <h3>AI 建模教練 <span>AI Model Coach</span></h3>
+            <select id="coachMode">
+              <option>溝通診斷 | Communication Diagnosis</option>
+              <option>衝突分析 | Conflict Analysis</option>
+              <option>信任建立 | Trust Building</option>
+              <option>高共鳴改寫 | Resonance Rewrite</option>
+              <option>需求分析 | Need Analysis</option>
+              <option>共識建立 | Consensus Building</option>
+            </select>
+            <textarea id="coachInput" placeholder="描述你遇到的溝通情境 | Describe your communication scenario">孩子沉迷手機，不願意讀書，講了很多次都沒有用。</textarea>
+            <button class="action-button" id="coachBtn"><i data-lucide="brain"></i><span>產生建模分析 <small>Generate model analysis</small></span></button>
+          </div>
+          <div class="output-pane coach-output" id="coachOutput"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
